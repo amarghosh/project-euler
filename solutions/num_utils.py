@@ -50,7 +50,13 @@ def get_prime_factors(num):
     return facts
 
 
-if __name__ == '__main__':
-    x = 41233452342134L
-    print get_prime_factors(x)
+def get_prime_factors_dict(num):
+    factors = get_prime_factors(num)
+    d = dict((f, 0) for f in factors)
+    for i in d:
+        d[i] = len(filter(lambda k: k == i, factors))
+    return d
 
+
+if __name__ == '__main__':
+    pass
