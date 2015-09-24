@@ -12,6 +12,23 @@ def isprime(n):
         i += 2
     return True
 
+def generate_n_primes(N):
+    p = [2]
+    n = 3
+    while len(p) < N:
+        flag = True
+        cutoff = int(math.sqrt(n))
+        for i in p:
+            if i > cutoff:
+                break
+            if n % i == 0:
+                flag = False
+                break
+        if flag:
+            p.append(n)
+        n += 2
+    return p
+
 def generate_primes_upto(max_val):
     p = [2]
     n = 3
